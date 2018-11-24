@@ -3,25 +3,27 @@
     <header>
       <h1>{{ msg }}</h1>
     </header>
-    <h2>type your soul!</h2>
-    <h3>title top</h3>
+    <h3>上の段</h3>
     <div class="input_text">
       <input class="form-control" id="title_top" value="はじめての">
     </div>
-    <h3>title top</h3>
+    <h3>下の段</h3>
     <div class="input_text">
       <input class="form-control" id="title_bottom" value="懇親会LTだゾ">
     </div>
     <div class="row">
       <div class="col-sm-6">
+        <p>左側</p>
         <input type="text" class="form-control" id="left_cap" value="脚本 : フロント 太郎">
       </div>
       <div class="col-sm-6">
+        <p>左側</p>
         <input type="text" class="form-control" id="right_cap" value="監督 : エンド 次郎">
       </div>
     </div>
     <div class="submit">
       <button type="button" class="btn btn-success" id="enter">嵐を呼ぶ!</button>
+      <button type="button" class="btn btn-success" id="tweet">嵐をシェアする!</button>
     </div>
     <div class="output">
       <canvas id="output_field" width="2880" height="1620"></canvas>
@@ -38,7 +40,7 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'This is Generator of Call a Storm'
+      msg: '嵐を呼ぶサブタイトルジェネレータ'
     }
   }
 }
@@ -117,8 +119,15 @@ li {
 a {
   color: #42b983;
 }
+p{
+  margin: 0;
+}
 header{
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid gray;
+}
+footer{
+  margin-top: 25px;
+  border-top: 1px solid gray;
 }
 h1{
   margin:0;
@@ -142,14 +151,26 @@ h3{
 .row div{
   padding: 0;
 }
+.row p{
+  text-align: left;
+  margin-bottom: 0;
+}
 .submit{
   max-width: 960px;
   margin: 0 auto;
   margin-bottom: 15px;
   text-align:right;
 }
-.submit #enter{
+.submit #enter, .submit #tweet{
+  margin-top: 20px;
   width: 100%;
+}
+#tweet{
+  background-color: royalblue;
+  border-color: mediumblue;
+}
+#tweet:hover{
+  background-color: #3453b3;
 }
 .output{
   width: 960px;
