@@ -23,18 +23,10 @@
     <div class="submit">
       <button type="button" class="btn btn-success" id="enter">嵐を呼ぶ!</button>
     </div>
-    <div class="submit">
-      <button class="text-right btn btn-dark" onclick="location.reload();">消すゾ</button>
-    </div>
     <div class="output">
       <canvas id="output_field" width="2880" height="1620"></canvas>
-    </div>
-    <!-- <div class="submit">
-      <button type="button" class="btn btn-success" id="download">ダウンロードするゾ</button>
-    </div>
-    <div class="output">
       <img id="output_image" />
-    </div> -->
+    </div>
     <footer>
       <p>poewred by ITCreateClub</p>
     </footer>
@@ -51,20 +43,14 @@ export default {
   }
 }
 $(function(){
-  // var ctx = document.getElementById("output_field").getContext("2d");
-  // var grad = ctx.createLinearGradient(1440,0, 1440, 1620); // グラデーションを作成
-  // canvas.width = win.innerWidth;
-  // canvas.height = win.innerHeight;
-  // // グラデーションレイヤーに色を設定
-  // grad.addColorStop(0,"#FD81A6");
-  // grad.addColorStop(1,"#000");
-  // ctx.fillStyle = grad; // 塗りつぶし色にグラデーションを設定
-  // ctx.rect(0, 0, 0, 0);
-  // ctx.fill();
+  // 背景グラデ
+  fillBack();
 
   $('#enter').click(function(){
-    // console.log('submit');
     var ctx = document.getElementById("output_field").getContext("2d");
+    ctx.clearRect(0, 0, 2880, 1620);
+    fillBack();
+    // 嵐部分
     ctx.font = '250px sans-serif';
     ctx.textAlign = 'left';
     var top_text = $('#title_top').val();
@@ -74,6 +60,7 @@ $(function(){
     ctx.textAlign = 'right';
     ctx.fillText(bottom_text,2650,930);
 
+    // 左キャプション
     var left_cap = $('#left_cap').val();
     ctx.textAlign = 'left';
     ctx.lineWidth = 5;
@@ -83,6 +70,7 @@ $(function(){
     ctx.strokeStyle = "gray";
     ctx.strokeText(left_cap, 500, 1350);
 
+    // 右キャプション
     var right_cap = $('#right_cap').val();
     ctx.textAlign = 'left';
     ctx.lineWidth = 5;
@@ -91,14 +79,26 @@ $(function(){
     ctx.fillText(right_cap, 1700, 1350);
     ctx.strokeStyle = "gray";
     ctx.strokeText(right_cap, 1700, 1350);
-  });
-  $('#download').click(function(){
-    console.log('export');
+
+    // 生成
     var ctx = document.getElementById("output_field");
     var png = ctx.toDataURL();
     document.getElementById("output_image").src = png;
+    $('#output').css('border', '0');
+    $('#output_field').hide();
+    $('#output_image').show();
   });
 });
+function fillBack(){
+  // 背景グラデ
+  var ctx_base = document.getElementById("output_field").getContext("2d");
+  ctx_base.beginPath();
+  var ctx_base_color = ctx_base.createLinearGradient(0, 410, 0, 1620);
+  ctx_base_color.addColorStop(0.0, '#FD81A6');
+  ctx_base_color.addColorStop(1.0, '#FFFF83');
+  ctx_base.fillStyle = ctx_base_color;
+  ctx_base.fillRect(0, 0, 2880, 1620);
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -160,12 +160,12 @@ h3{
 .output #output_field{
   width: 100%;
   height: 100%;
-  background-color:#FF7FA6;
-  background: linear-gradient(0deg,#FFFF83,#FD81A6);
+  /*background: linear-gradient(0deg,#FFFF83,#FD81A6);*/
   font-size: 50px;
 }
 .output #output_image{
   max-width: 960px;
+  display: none;
 }
 footer{
   height: 30px;
