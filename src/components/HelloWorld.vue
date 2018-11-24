@@ -1,40 +1,23 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <header>
+      <h1>{{ msg }}</h1>
+    </header>
     <h2>Essential Links</h2>
-    <ul>
-      <li>
-        <a href="https://vuejs.org" target="_blank">Core Docs</a>
-      </li>
-      <li>
-        <a href="https://forum.vuejs.org" target="_blank"> Forum</a>
-      </li>
-      <li>
-        <a href="https://chat.vuejs.org" target="_blank"> Community Chat</a>
-      </li>
-      <li>
-        <a href="https://twitter.com/vuejs" target="_blank" > Twitter</a>
-      </li>
-      <br>
-      <li>
-        <a href="http://vuejs-templates.github.io/webpack/" target="_blank" >Docs for This Template</a>
-      </li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li>
-        <a href="http://router.vuejs.org/" target="_blank">vue-router </a>
-      </li>
-      <li>
-        <a href="http://vuex.vuejs.org/" target="_blank">vuex</a>
-      </li>
-      <li>
-        <a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a>
-      </li>
-      <li>
-        <a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a>
-      </li>
-    </ul>
+    <h3>title top</h3>
+    <div class="input_text">
+      <input class="form-control" id="title_top">
+    </div>
+    <h3>title top</h3>
+    <div class="input_text">
+      <input class="form-control" id="title_bottom">
+    </div>
+    <div class="output">
+      <canvas id="output_field"></canvas>
+    </div>
+    <footer>
+      <p>poewred by ITCreateClub</p>
+    </footer>
   </div>
 </template>
 
@@ -64,5 +47,39 @@ li {
 }
 a {
   color: #42b983;
+}
+header{
+  border-bottom: 1px solid #000;
+}
+h1{
+  margin:0;
+}
+.input_text{
+  max-width: 960px;
+  margin: 0 auto;
+}
+.input_text input{
+  margin: 0 0 20px 0;
+}
+h3{
+  margin: 0 auto;
+  text-align: left;
+  max-width: 960px;
+}
+.output{
+  width: 960px;
+  height: 540px;
+  margin: 0 auto;
+  border: 1px solid gray;
+}
+.output #output_field{
+  width: 100%;
+  height: 100%;
+  background-color:#FF7FA6;
+  background: linear-gradient(0deg,#FFFF83,#FD81A6);
+  // #5853A0
+}
+footer{
+  height: 30px;
 }
 </style>
