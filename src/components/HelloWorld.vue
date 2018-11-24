@@ -60,7 +60,7 @@ $(function(){
     ctx.fillStyle = '#5853A0';
     ctx.fillText(top_text,140,590);
     ctx.textAlign = 'right';
-    ctx.fillText(bottom_text,2650,930);
+    ctx.fillText(bottom_text,2740,930);
 
     // 左キャプション
     var left_cap = $('#left_cap').val();
@@ -68,19 +68,19 @@ $(function(){
     ctx.lineWidth = 5;
     ctx.fillStyle = "#FFF";
     ctx.font = "90px cursive";
-    ctx.fillText(left_cap, 500, 1350);
+    ctx.fillText(left_cap, 400, 1350);
     ctx.strokeStyle = "gray";
-    ctx.strokeText(left_cap, 500, 1350);
+    ctx.strokeText(left_cap, 400, 1350);
 
     // 右キャプション
     var right_cap = $('#right_cap').val();
-    ctx.textAlign = 'left';
+    ctx.textAlign = 'right';
     ctx.lineWidth = 5;
     ctx.fillStyle = "#FFF";
     ctx.font = "90px cursive";
-    ctx.fillText(right_cap, 1700, 1350);
+    ctx.fillText(right_cap, 2480, 1350);
     ctx.strokeStyle = "gray";
-    ctx.strokeText(right_cap, 1700, 1350);
+    ctx.strokeText(right_cap, 2480, 1350);
 
     // 生成
     var ctx = document.getElementById("output_field");
