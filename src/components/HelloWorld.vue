@@ -5,11 +5,11 @@
     </header>
     <h3>上の段</h3>
     <div class="input_text">
-      <input class="form-control" id="title_top" value="はじめての">
+      <input class="form-control" id="title_top" value="タイトル">
     </div>
     <h3>下の段</h3>
     <div class="input_text">
-      <input class="form-control" id="title_bottom" value="懇親会LTだゾ">
+      <input class="form-control" id="title_bottom" value="ジェネレーターだゾ">
     </div>
     <div class="row">
       <div class="col-sm-6">
@@ -24,6 +24,7 @@
     <div class="submit">
       <button type="button" class="btn btn-success" id="enter">嵐を呼ぶ!</button>
       <button type="button" class="btn btn-success" id="tweet">嵐をシェアする!</button>
+      <a href="https://twitter.com/intent/tweet?&hashtags=嵐を呼ぶジェネレータ&url=https://afterschoolstudy.github.io/generator_of_call_a_storm/dist/" class="twitter-hashtag-button" data-show-count="false">Tweet #嵐を呼ぶジェネレータ</a>
     </div>
     <div class="output">
       <canvas id="output_field" width="2880" height="1620"></canvas>
@@ -108,6 +109,9 @@ function fillBack(){
 h1, h2 {
   font-weight: normal;
 }
+h1, p{
+  margin:0;
+}
 ul {
   list-style-type: none;
   padding: 0;
@@ -119,18 +123,14 @@ li {
 a {
   color: #42b983;
 }
-p{
-  margin: 0;
-}
 header{
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: left;
   border-bottom: 1px solid gray;
 }
-footer{
-  margin-top: 25px;
-  border-top: 1px solid gray;
-}
-h1{
-  margin:0;
+header h1{
+  font-size: 2rem;
 }
 .input_text{
   max-width: 960px;
@@ -143,6 +143,11 @@ h3{
   margin: 0 auto;
   text-align: left;
   max-width: 960px;
+}
+@media screen and (max-width: 960px){
+  h3{
+    font-size:1.4rem;
+  }
 }
 .row{
   max-width: 960px;
@@ -188,7 +193,19 @@ h3{
   max-width: 960px;
   display: none;
 }
+@media screen and (max-width: 960px){
+  .output{
+    width: 100vw;
+    height: calc( 100vw * 0.536);
+  }
+  .output #output_image{
+    width: 100%;
+    height: 100%;
+  }
+}
 footer{
   height: 30px;
+  margin-top: 25px;
+  border-top: 1px solid gray;
 }
 </style>
