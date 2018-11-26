@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="c-container">
     <header>
       <h1>{{ msg }}</h1>
     </header>
@@ -17,7 +17,7 @@
         <input type="text" class="form-control" id="left_cap" value="脚本 : フロント 太郎">
       </div>
       <div class="col-sm-6">
-        <p>左側</p>
+        <p>右側</p>
         <input type="text" class="form-control" id="right_cap" value="監督 : エンド 次郎">
       </div>
     </div>
@@ -105,7 +105,7 @@ function fillBack(){
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="scss" scoped>
 h1, h2 {
   font-weight: normal;
 }
@@ -125,19 +125,20 @@ a {
 }
 header{
   max-width: 960px;
-  margin: 0 auto;
+  margin: 0 auto 10px auto;
   text-align: left;
   border-bottom: 1px solid gray;
-}
-header h1{
-  font-size: 2rem;
+  padding-top: 20px;
+  h1{
+    font-size: 2rem;
+  }
 }
 .input_text{
   max-width: 960px;
   margin: 0 auto;
-}
-.input_text input{
-  margin: 0 0 20px 0;
+  input{
+    margin: 0 0 20px 0;
+  }
 }
 h3{
   margin: 0 auto;
@@ -151,61 +152,65 @@ h3{
 }
 .row{
   max-width: 960px;
-  margin: 0 auto;
-}
-.row div{
-  padding: 0;
-}
-.row p{
-  text-align: left;
-  margin-bottom: 0;
+  margin: 0 auto 20px auto;
+  div{
+    padding: 0;
+  }
+  p{
+    text-align: left;
+    margin-bottom: 0;
+  }
 }
 .submit{
   max-width: 960px;
   margin: 0 auto;
   margin-bottom: 15px;
   text-align:right;
-}
-.submit #enter, .submit #tweet{
-  margin-top: 20px;
-  width: 100%;
+  #enter, #tweet {
+    margin-bottom: 20px;
+    width: 100%;
+  }
 }
 #tweet{
   background-color: royalblue;
   border-color: mediumblue;
-}
-#tweet:hover{
-  background-color: #3453b3;
+  &:hover{
+    background-color: #3453b3;
+  }
 }
 .output{
-  width: 960px;
+  max-width: 960px;
   height: 540px;
   margin: 0 auto;
   border: 1px solid gray;
-}
-.output #output_field{
-  width: 100%;
-  height: 100%;
-  /*background: linear-gradient(0deg,#FFFF83,#FD81A6);*/
-  font-size: 50px;
-}
-.output #output_image{
-  max-width: 960px;
-  display: none;
-}
-@media screen and (max-width: 960px){
-  .output{
-    width: 100vw;
+  @media screen and (max-width: 960px){
+    width: 100%;
     height: calc( 100vw * 0.536);
   }
-  .output #output_image{
+  #output_field{
     width: 100%;
     height: 100%;
+    /*background: linear-gradient(0deg,#FFFF83,#FD81A6);*/
+    font-size: 50px;
+  }
+  #output_image{
+    max-width: 960px;
+    display: none;
+    @media screen and (max-width: 960px){
+      width: 100%;
+      height: 100%;
+    }
   }
 }
 footer{
   height: 30px;
   margin-top: 25px;
   border-top: 1px solid gray;
+}
+.c-container {
+  padding: 0;
+  @media screen and (max-width: 960px){
+    padding: 0 20px;
+  }
 }
 </style>
