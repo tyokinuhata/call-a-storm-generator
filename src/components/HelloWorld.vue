@@ -163,8 +163,7 @@ h3{
 }
 .submit{
   max-width: 960px;
-  margin: 0 auto;
-  margin-bottom: 15px;
+  margin: 0 auto 15px auto;
   text-align:right;
   #enter, #tweet {
     margin-bottom: 20px;
@@ -181,7 +180,7 @@ h3{
 .output{
   max-width: 960px;
   height: 540px;
-  margin: 0 auto;
+  margin: 0 auto 25px auto;
   border: 1px solid gray;
   @media screen and (max-width: 960px){
     width: 100%;
@@ -204,7 +203,6 @@ h3{
 }
 footer{
   height: 30px;
-  margin-top: 25px;
   border-top: 1px solid gray;
 }
 .c-container {
