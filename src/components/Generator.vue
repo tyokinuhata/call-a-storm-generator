@@ -59,31 +59,27 @@ export default {
   },
   methods: {
     generate () {
+      // 描画
       let ctx = document.getElementById('output_field').getContext('2d')
-      ctx.clearRect(0, 0, 2880, 1620)
       this.drawBg()
-
-      // 嵐部分
-      ctx.font = '250px sans-serif'
-      ctx.textAlign = 'left'
-      const topText = this.titleTop
-      const bottomText = this.titleBottom
-      ctx.fillStyle = '#5853A0'
-      ctx.fillText(topText, 140, 590)
-      ctx.textAlign = 'right'
-      ctx.fillText(bottomText, 2740, 930)
-
-      // キャプション部分
-      this.drawCaption(this.leftCap, 'left', { 'x': 400, 'y': 1350 })
-      this.drawCaption(this.rightCap, 'right', { 'x': 2480, 'y': 1350 })
+      this.drawTitle(ctx)
+      this.drawCaption(ctx, this.leftCap, 'left', { 'x': 400, 'y': 1350 })
+      this.drawCaption(ctx, this.rightCap, 'right', { 'x': 2480, 'y': 1350 })
 
       // 生成
       ctx = document.getElementById('output_field')
       this.isGenerated = true
       this.src = ctx.toDataURL()
     },
-    drawCaption (text, align, coordinate) {
-      let ctx = document.getElementById('output_field').getContext('2d')
+    drawTitle (ctx) {
+      ctx.font = '250px sans-serif'
+      ctx.textAlign = 'left'
+      ctx.fillStyle = '#5853A0'
+      ctx.fillText(this.titleTop, 140, 590)
+      ctx.textAlign = 'right'
+      ctx.fillText(this.titleBottom, 2740, 930)
+    },
+    drawCaption (ctx, text, align, coordinate) {
       ctx.textAlign = align
       ctx.lineWidth = 5
       ctx.fillStyle = '#FFF'
