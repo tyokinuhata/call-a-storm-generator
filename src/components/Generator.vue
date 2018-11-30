@@ -1,40 +1,45 @@
 <template>
-  <div class="hello">
-    <header>
+  <div>
+    <header class="mt-2">
       <h1>{{ appName }}</h1>
     </header>
-    <h3>上の段</h3>
-    <div class="input_text">
-      <input class="form-control" v-model="titleTop">
-    </div>
-    <h3>下の段</h3>
-    <div class="input_text">
-      <input class="form-control" v-model="titleBottom">
-    </div>
-    <div class="row">
-      <div class="col-sm-6">
-        <p>左側</p>
-        <input type="text" class="form-control" v-model="leftCap">
+    <div class="container">
+      <div class="mb-2">
+        <div class="row mb-2">
+          <div class="col-md-1">上の段</div>
+          <input class="form-control d-inline col-md-11" v-model="titleTop" autofocus>
+        </div>
+        <div class="row mb-2">
+          <div class="col-md-1">下の段</div>
+          <input class="form-control d-inline col-md-11" v-model="titleBottom">
+        </div>
+
+        <div class="row mb-2">
+          <div class="col-md-1">左側</div>
+          <input class="form-control d-inline col-md-11" v-model="leftCap">
+        </div>
+        <div class="row mb-2">
+          <div class="col-md-1">右側</div>
+          <input class="form-control d-inline col-md-11" v-model="rightCap">
+        </div>
       </div>
-      <div class="col-sm-6">
-        <p>左側</p>
-        <input type="text" class="form-control" v-model="rightCap">
+
+      <div class="row mb-2">
+        <button type="button" class="col-md-6 btn btn-success" @click="generate">嵐を呼ぶ！</button>
+        <a href ="https://twitter.com/intent/tweet?&hashtags=嵐を呼ぶジェネレータ&url=https://afterschoolstudy.github.io/generator_of_call_a_storm/dist/" class="col-md-6 btn btn-primary">嵐をシェアする！</a>
       </div>
-    </div>
-    <div class="submit">
-      <button type="button" class="btn btn-success" id="enter" @click="generate">嵐を呼ぶ!</button>
-      <button type="button" class="btn btn-success" id="tweet">嵐をシェアする!</button>
-      <a href="https://twitter.com/intent/tweet?&hashtags=嵐を呼ぶジェネレータ&url=https://afterschoolstudy.github.io/generator_of_call_a_storm/dist/" class="twitter-hashtag-button" data-show-count="false">Tweet #嵐を呼ぶジェネレータ</a>
-    </div>
-    <div class="output">
-      <canvas id="output_field" width="2880" height="1620"></canvas>
-      <img id="output_image" />
+
+      <div class="output">
+        <canvas id="output_field" width="2880" height="1620"></canvas>
+        <img id="output_image" />
+      </div>
     </div>
     <footer>
       <p>powered by ITCreateClub</p>
     </footer>
   </div>
 </template>
+
 <script>
 export default {
   name: 'Generator',
