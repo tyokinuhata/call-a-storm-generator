@@ -9,4 +9,4 @@ $ npm run dev
 
 ## ジェネレーターのリンクだゾ
 
-https://afterschoolstudy.github.io/generator_of_call_a_storm/dist/
+https://afterschoolstudy.github.io/generator_of_call_a_storm
