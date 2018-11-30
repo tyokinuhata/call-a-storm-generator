@@ -5,20 +5,20 @@
     </header>
     <h3>上の段</h3>
     <div class="input_text">
-      <input class="form-control" id="title_top" v-model="titleTop">
+      <input class="form-control" v-model="titleTop">
     </div>
     <h3>下の段</h3>
     <div class="input_text">
-      <input class="form-control" id="title_bottom" v-model="titleBottom">
+      <input class="form-control" v-model="titleBottom">
     </div>
     <div class="row">
       <div class="col-sm-6">
         <p>左側</p>
-        <input type="text" class="form-control" id="left_cap" v-model="leftCap">
+        <input type="text" class="form-control" v-model="leftCap">
       </div>
       <div class="col-sm-6">
         <p>左側</p>
-        <input type="text" class="form-control" id="right_cap" v-model="rightCap">
+        <input type="text" class="form-control" v-model="rightCap">
       </div>
     </div>
     <div class="submit">
@@ -49,7 +49,6 @@ export default {
   },
   methods: {
     generate () {
-      this.drawBg()
       let ctx = document.getElementById('output_field').getContext('2d')
       ctx.clearRect(0, 0, 2880, 1620)
       this.drawBg()
@@ -57,15 +56,15 @@ export default {
       // 嵐部分
       ctx.font = '250px sans-serif'
       ctx.textAlign = 'left'
-      let topText = this.titleTop
-      let bottomText = this.titleBottom
+      const topText = this.titleTop
+      const bottomText = this.titleBottom
       ctx.fillStyle = '#5853A0'
       ctx.fillText(topText, 140, 590)
       ctx.textAlign = 'right'
       ctx.fillText(bottomText, 2740, 930)
 
       // 左キャプション
-      let leftCap = this.leftCap
+      const leftCap = this.leftCap
       ctx.textAlign = 'left'
       ctx.lineWidth = 5
       ctx.fillStyle = '#FFF'
@@ -75,7 +74,7 @@ export default {
       ctx.strokeText(leftCap, 400, 1350)
 
       // 右キャプション
-      let rightCap = this.rightCap
+      const rightCap = this.rightCap
       ctx.textAlign = 'right'
       ctx.lineWidth = 5
       ctx.fillStyle = '#FFF'
@@ -86,16 +85,15 @@ export default {
 
       // 生成
       ctx = document.getElementById('output_field')
-      let png = ctx.toDataURL()
-      document.getElementById('output_image').src = png
+      document.getElementById('output_image').src = ctx.toDataURL()
       $('#output').css('border', '0')
       $('#output_field').hide()
       $('#output_image').show()
     },
     drawBg () {
-      let ctxBase = document.getElementById('output_field').getContext('2d')
+      const ctxBase = document.getElementById('output_field').getContext('2d')
       ctxBase.beginPath()
-      let ctxBaseColor = ctxBase.createLinearGradient(0, 410, 0, 1620)
+      const ctxBaseColor = ctxBase.createLinearGradient(0, 410, 0, 1620)
       ctxBaseColor.addColorStop(0.0, '#FD81A6')
       ctxBaseColor.addColorStop(1.0, '#FFFF83')
       ctxBase.fillStyle = ctxBaseColor
