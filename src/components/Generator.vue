@@ -34,7 +34,7 @@
         <img class="output_image" :src="src" v-show="isGenerated" />
       </div>
     </div>
-    <footer class="footer pt-3">
+    <footer class="border-top pt-3">
       <p>Powered by <a href="https://itc.moe/" target="_blank">IT Create Club</a></p>
     </footer>
   </div>
@@ -118,8 +118,5 @@ export default {
       width: 100%;
       height: 100%;
     }
-  }
-  .footer {
-    border-top: 1px solid gray;
   }
 </style>
