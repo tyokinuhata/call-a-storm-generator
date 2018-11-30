@@ -55,7 +55,7 @@ export default {
     }
   },
   mounted () {
-    this.drawBg()
+    this.generate()
   },
   methods: {
     generate () {
@@ -112,26 +112,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .output {
+  #output_image {
     max-width: 960px;
-    height: 540px;
-    margin: 0 auto 25px auto;
-    border: 1px solid gray;
     @media screen and (max-width: 960px) {
       width: 100%;
-      height: calc( 100vw * 0.536);
-    }
-    #output_field {
-      width: 100%;
       height: 100%;
-      font-size: 50px;
-    }
-    #output_image {
-      max-width: 960px;
-      @media screen and (max-width: 960px) {
-        width: 100%;
-        height: 100%;
-      }
     }
   }
   footer {
