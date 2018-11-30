@@ -3,7 +3,7 @@
     <header class="mt-2">
       <h1>{{ appName }}</h1>
     </header>
-    <div class="container mb-4">
+    <div class="container">
       <div class="mb-2">
         <div class="row mb-2">
           <div class="col-md-1">上の段</div>
@@ -29,13 +29,13 @@
         <a href ="https://twitter.com/intent/tweet?&hashtags=嵐を呼ぶジェネレータ&url=https://afterschoolstudy.github.io/generator_of_call_a_storm/dist/" class="col-md-6 btn btn-primary">嵐をシェアする！</a>
       </div>
 
-      <div class="output">
+      <div class="mb-4">
         <canvas id="output_field" width="2880" height="1620" v-show="!isGenerated"></canvas>
-        <img id="output_image" :src="src" v-show="isGenerated" />
+        <img class="output_image" :src="src" v-show="isGenerated" />
       </div>
     </div>
-    <footer>
-      <p>Powered by ITCreateClub</p>
+    <footer class="footer pt-3">
+      <p>Powered by <a href="https://itc.moe/" target="_blank">IT Create Club</a></p>
     </footer>
   </div>
 </template>
@@ -112,14 +112,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  #output_image {
+  .output_image {
     max-width: 960px;
     @media screen and (max-width: 960px) {
       width: 100%;
       height: 100%;
     }
   }
-  footer {
+  .footer {
     border-top: 1px solid gray;
   }
 </style>
