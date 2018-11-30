@@ -105,106 +105,109 @@ export default {
 }
 </script>
 
-<style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-h1, p{
-  margin:0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-header{
-  max-width: 960px;
-  margin: 0 auto;
-  text-align: left;
-  border-bottom: 1px solid gray;
-}
-header h1{
-  font-size: 2rem;
-}
-.input_text{
-  max-width: 960px;
-  margin: 0 auto;
-}
-.input_text input{
-  margin: 0 0 20px 0;
-}
-h3{
-  margin: 0 auto;
-  text-align: left;
-  max-width: 960px;
-}
-@media screen and (max-width: 960px){
+<style lang="scss" scoped>
+  h1, h2 {
+    font-weight: normal;
+  }
+  h1, p {
+    margin:0;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  a {
+    color: #42b983;
+  }
+  header {
+    max-width: 960px;
+    margin: 0 auto 10px auto;
+    text-align: left;
+    border-bottom: 1px solid gray;
+    padding-top: 20px;
+    h1{
+      font-size: 2rem;
+    }
+  }
+  .input_text {
+    max-width: 960px;
+    margin: 0 auto;
+    input{
+      margin: 0 0 20px 0;
+    }
+  }
   h3{
-    font-size:1.4rem;
+    margin: 0 auto;
+    text-align: left;
+    max-width: 960px;
   }
-}
-.row{
-  max-width: 960px;
-  margin: 0 auto;
-}
-.row div{
-  padding: 0;
-}
-.row p{
-  text-align: left;
-  margin-bottom: 0;
-}
-.submit{
-  max-width: 960px;
-  margin: 0 auto;
-  margin-bottom: 15px;
-  text-align:right;
-}
-.submit #enter, .submit #tweet{
-  margin-top: 20px;
-  width: 100%;
-}
-#tweet{
-  background-color: royalblue;
-  border-color: mediumblue;
-}
-#tweet:hover{
-  background-color: #3453b3;
-}
-.output{
-  width: 960px;
-  height: 540px;
-  margin: 0 auto;
-  border: 1px solid gray;
-}
-.output #output_field{
-  width: 100%;
-  height: 100%;
-  font-size: 50px;
-}
-.output #output_image{
-  max-width: 960px;
-  display: none;
-}
-@media screen and (max-width: 960px){
-  .output{
-    width: 100vw;
-    height: calc( 100vw * 0.536);
+  @media screen and (max-width: 960px) {
+    h3{
+      font-size:1.4rem;
+    }
   }
-  .output #output_image{
-    width: 100%;
-    height: 100%;
+  .row {
+    max-width: 960px;
+    margin: 0 auto 20px auto;
+    div{
+      padding: 0;
+    }
+    p{
+      text-align: left;
+      margin-bottom: 0;
+    }
   }
-}
-footer{
-  height: 30px;
-  margin-top: 25px;
-  border-top: 1px solid gray;
-}
+  .submit {
+    max-width: 960px;
+    margin: 0 auto 15px auto;
+    text-align:right;
+    #enter, #tweet {
+      margin-bottom: 20px;
+      width: 100%;
+    }
+  }
+  #tweet {
+    background-color: royalblue;
+    border-color: mediumblue;
+    &:hover{
+      background-color: #3453b3;
+    }
+  }
+  .output {
+    max-width: 960px;
+    height: 540px;
+    margin: 0 auto 25px auto;
+    border: 1px solid gray;
+    @media screen and (max-width: 960px) {
+      width: 100%;
+      height: calc( 100vw * 0.536);
+    }
+    #output_field {
+      width: 100%;
+      height: 100%;
+      font-size: 50px;
+    }
+    #output_image {
+      max-width: 960px;
+      display: none;
+      @media screen and (max-width: 960px) {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  footer {
+    height: 30px;
+    border-top: 1px solid gray;
+  }
+  .c-container {
+    padding: 0;
+    @media screen and (max-width: 960px) {
+      padding: 0 20px;
+    }
+  }
 </style>
