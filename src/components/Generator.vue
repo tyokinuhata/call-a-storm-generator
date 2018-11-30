@@ -30,8 +30,8 @@
       </div>
 
       <div class="output">
-        <canvas id="output_field" width="2880" height="1620"></canvas>
-        <img id="output_image" />
+        <canvas id="output_field" width="2880" height="1620" v-show="!isGenerated"></canvas>
+        <img id="output_image" :src="src" v-show="isGenerated" />
       </div>
     </div>
     <footer>
@@ -49,7 +49,9 @@ export default {
       titleTop: 'タイトル',
       titleBottom: 'ジェネレーターだゾ',
       leftCap: '脚本 : フロント 太郎',
-      rightCap: '監督 : エンド 次郎'
+      rightCap: '監督 : エンド 次郎',
+      src: '',
+      isGenerated: false
     }
   },
   methods: {
@@ -90,10 +92,8 @@ export default {
 
       // 生成
       ctx = document.getElementById('output_field')
-      document.getElementById('output_image').src = ctx.toDataURL()
-      $('#output').css('border', '0')
-      $('#output_field').hide()
-      $('#output_image').show()
+      this.src = ctx.toDataURL()
+      this.isGenerated = true
     },
     drawBg () {
       const ctxBase = document.getElementById('output_field').getContext('2d')
@@ -125,7 +125,6 @@ export default {
     }
     #output_image {
       max-width: 960px;
-      display: none;
       @media screen and (max-width: 960px) {
         width: 100%;
         height: 100%;
