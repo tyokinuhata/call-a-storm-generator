@@ -73,30 +73,24 @@ export default {
       ctx.textAlign = 'right'
       ctx.fillText(bottomText, 2740, 930)
 
-      // 左キャプション
-      const leftCap = this.leftCap
-      ctx.textAlign = 'left'
-      ctx.lineWidth = 5
-      ctx.fillStyle = '#FFF'
-      ctx.font = '90px cursive'
-      ctx.fillText(leftCap, 400, 1350)
-      ctx.strokeStyle = 'gray'
-      ctx.strokeText(leftCap, 400, 1350)
-
-      // 右キャプション
-      const rightCap = this.rightCap
-      ctx.textAlign = 'right'
-      ctx.lineWidth = 5
-      ctx.fillStyle = '#FFF'
-      ctx.font = '90px cursive'
-      ctx.fillText(rightCap, 2480, 1350)
-      ctx.strokeStyle = 'gray'
-      ctx.strokeText(rightCap, 2480, 1350)
+      // キャプション部分
+      this.drawCaption(this.leftCap, 'left', { 'x': 400, 'y': 1350 })
+      this.drawCaption(this.rightCap, 'right', { 'x': 2480, 'y': 1350 })
 
       // 生成
       ctx = document.getElementById('output_field')
       this.isGenerated = true
       this.src = ctx.toDataURL()
+    },
+    drawCaption (text, align, coordinate) {
+      let ctx = document.getElementById('output_field').getContext('2d')
+      ctx.textAlign = align
+      ctx.lineWidth = 5
+      ctx.fillStyle = '#FFF'
+      ctx.font = '90px cursive'
+      ctx.fillText(text, coordinate['x'], coordinate['y'])
+      ctx.strokeStyle = 'gray'
+      ctx.strokeText(text, coordinate['x'], coordinate['y'])
     },
     drawBg () {
       const ctxBase = document.getElementById('output_field').getContext('2d')
