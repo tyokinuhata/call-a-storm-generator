@@ -3,7 +3,7 @@
     <header class="mt-2">
       <h1>{{ appName }}</h1>
     </header>
-    <div class="container">
+    <div class="container mb-4">
       <div class="mb-2">
         <div class="row mb-2">
           <div class="col-md-1">上の段</div>
@@ -35,7 +35,7 @@
       </div>
     </div>
     <footer>
-      <p>powered by ITCreateClub</p>
+      <p>Powered by ITCreateClub</p>
     </footer>
   </div>
 </template>
@@ -53,6 +53,9 @@ export default {
       src: '',
       isGenerated: false
     }
+  },
+  mounted () {
+    this.drawBg()
   },
   methods: {
     generate () {
@@ -92,8 +95,8 @@ export default {
 
       // 生成
       ctx = document.getElementById('output_field')
-      this.src = ctx.toDataURL()
       this.isGenerated = true
+      this.src = ctx.toDataURL()
     },
     drawBg () {
       const ctxBase = document.getElementById('output_field').getContext('2d')
@@ -132,7 +135,6 @@ export default {
     }
   }
   footer {
-    height: 30px;
     border-top: 1px solid gray;
   }
 </style>
