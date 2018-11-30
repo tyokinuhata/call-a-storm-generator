@@ -26,7 +26,7 @@
 
       <div class="row mb-2">
         <button type="button" class="col-md-6 btn btn-success" @click="generate">嵐を呼ぶ！</button>
-        <a href ="https://twitter.com/intent/tweet?&hashtags=嵐を呼ぶジェネレータ&url=https://afterschoolstudy.github.io/generator_of_call_a_storm/dist/" class="col-md-6 btn btn-primary">嵐をシェアする！</a>
+        <a href ="https://twitter.com/intent/tweet?&hashtags=嵐を呼ぶジェネレータ&url=https://afterschoolstudy.github.io/generator_of_call_a_storm" class="col-md-6 btn btn-primary">嵐をシェアする！</a>
       </div>
 
       <div class="mb-4">
