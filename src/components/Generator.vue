@@ -109,77 +109,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  h1, h2 {
-    font-weight: normal;
-  }
-  h1, p {
-    margin:0;
-  }
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  li {
-    display: inline-block;
-    margin: 0 10px;
-  }
-  a {
-    color: #42b983;
-  }
-  header {
-    max-width: 960px;
-    margin: 0 auto 10px auto;
-    text-align: left;
-    border-bottom: 1px solid gray;
-    padding-top: 20px;
-    h1{
-      font-size: 2rem;
-    }
-  }
-  .input_text {
-    max-width: 960px;
-    margin: 0 auto;
-    input{
-      margin: 0 0 20px 0;
-    }
-  }
-  h3{
-    margin: 0 auto;
-    text-align: left;
-    max-width: 960px;
-  }
-  @media screen and (max-width: 960px) {
-    h3{
-      font-size:1.4rem;
-    }
-  }
-  .row {
-    max-width: 960px;
-    margin: 0 auto 20px auto;
-    div{
-      padding: 0;
-    }
-    p{
-      text-align: left;
-      margin-bottom: 0;
-    }
-  }
-  .submit {
-    max-width: 960px;
-    margin: 0 auto 15px auto;
-    text-align:right;
-    #enter, #tweet {
-      margin-bottom: 20px;
-      width: 100%;
-    }
-  }
-  #tweet {
-    background-color: royalblue;
-    border-color: mediumblue;
-    &:hover{
-      background-color: #3453b3;
-    }
-  }
   .output {
     max-width: 960px;
     height: 540px;
@@ -206,11 +135,5 @@ export default {
   footer {
     height: 30px;
     border-top: 1px solid gray;
-  }
-  .c-container {
-    padding: 0;
-    @media screen and (max-width: 960px) {
-      padding: 0 20px;
-    }
   }
 </style>
