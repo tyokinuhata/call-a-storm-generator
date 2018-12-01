@@ -26,7 +26,7 @@
 
       <div class="row mb-2 mr-1 ml-1">
         <button type="button" class="col-md-6 btn btn-success" @click="generate">嵐を呼ぶ！</button>
-        <a href ="https://twitter.com/intent/tweet?&hashtags=嵐を呼ぶジェネレータ&url=https://afterschoolstudy.github.io/generator_of_call_a_storm" class="col-md-6 btn btn-primary">嵐をシェアする！</a>
+        <a href ="https://twitter.com/intent/tweet?&hashtags=嵐を呼ぶジェネレーター&url=https://afterschoolstudy.github.io/generator_of_call_a_storm" class="col-md-6 btn btn-primary">嵐をシェアする！</a>
       </div>
 
       <div class="mb-4">
@@ -35,7 +35,11 @@
       </div>
     </div>
     <footer class="border-top pt-3">
-      <p>Powered by <a href="https://itc.moe/" target="_blank">IT Create Club</a></p>
+      <p>
+        Powered by <a href="https://itc.moe/" target="_blank">IT Create Club</a>
+        &#x1f300;
+        Fork me on <a href="https://github.com/AfterSchoolStudy/generator_of_call_a_storm" target="_blank">GitHub</a>
+      </p>
     </footer>
   </div>
 </template>
@@ -45,8 +49,8 @@ export default {
   name: 'Generator',
   data () {
     return {
-      appName: '嵐を呼ぶサブタイトルジェネレータ',
-      titleTop: 'タイトル',
+      appName: '嵐を呼ぶサブタイトルジェネレーター',
+      titleTop: '嵐を呼ぶサブタイトル',
       titleBottom: 'ジェネレーターだゾ',
       leftCap: '脚本 : フロント 太郎',
       rightCap: '監督 : エンド 次郎',
