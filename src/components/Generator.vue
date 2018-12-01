@@ -1,26 +1,32 @@
 <template>
   <div>
     <header class="mt-2 mr-1 ml-1">
-      <h1>{{ appName }}</h1>
+      <h1 class="h1">{{ appName }}</h1>
     </header>
     <div class="container">
       <div class="mb-2">
         <div class="row mb-2 mr-1 ml-1">
           <div class="col-md-1">上の段</div>
-          <input class="form-control d-inline col-md-11" v-model="titleTop" autofocus>
-        </div>
-        <div class="row mb-2 mr-1 ml-1">
+          <input class="form-control d-inline col-md-5" v-model="titleTop" autofocus>
+
           <div class="col-md-1">下の段</div>
-          <input class="form-control d-inline col-md-11" v-model="titleBottom">
+          <input class="form-control d-inline col-md-5" v-model="titleBottom">
         </div>
 
         <div class="row mb-2 mr-1 ml-1">
           <div class="col-md-1">左側</div>
-          <input class="form-control d-inline col-md-11" v-model="leftCap">
-        </div>
-        <div class="row mb-2 mr-1 ml-1">
+          <input class="form-control d-inline col-md-5" v-model="leftCap">
+
           <div class="col-md-1">右側</div>
-          <input class="form-control d-inline col-md-11" v-model="rightCap">
+          <input class="form-control d-inline col-md-5" v-model="rightCap">
+        </div>
+
+        <div class="row mb-2 ml-1">
+          <div class="col-md-1">配色</div>
+          <select class="form-control col-md-2" v-model="colorType">
+            <option>桃 ~ 黃</option>
+            <option>緑 ~ 白 ~ 青</option>
+          </select>
         </div>
       </div>
 
@@ -50,10 +56,12 @@ export default {
   data () {
     return {
       appName: '嵐を呼ぶサブタイトルジェネレーター',
+      titleColor: '#5853A0',
       titleTop: '嵐を呼ぶサブタイトル',
       titleBottom: 'ジェネレーターだゾ',
       leftCap: '脚本 : フロント 太郎',
       rightCap: '監督 : エンド 次郎',
+      colorType: '桃 ~ 黃',
       src: '',
       isGenerated: false
     }
@@ -65,8 +73,8 @@ export default {
     generate () {
       // 描画
       let ctx = document.getElementById('output_field').getContext('2d')
-      this.drawBg(ctx)
-      this.drawTitle(ctx)
+      this.drawBg(ctx, this.colorType)
+      this.drawTitle(ctx, this.colorType)
       this.drawCaption(ctx, this.leftCap, 'left', { 'x': 400, 'y': 1350 })
       this.drawCaption(ctx, this.rightCap, 'right', { 'x': 2480, 'y': 1350 })
 
@@ -75,10 +83,10 @@ export default {
       this.isGenerated = true
       this.src = ctx.toDataURL()
     },
-    drawTitle (ctx) {
+    drawTitle (ctx, colorType) {
       ctx.font = '250px sans-serif'
       ctx.textAlign = 'left'
-      ctx.fillStyle = '#5853A0'
+      ctx.fillStyle = colorType === '桃 ~ 黃' ? '#5853A0' : '#633EBF'
       ctx.fillText(this.titleTop, 140, 590)
       ctx.textAlign = 'right'
       ctx.fillText(this.titleBottom, 2740, 930)
@@ -92,11 +100,18 @@ export default {
       ctx.strokeStyle = 'gray'
       ctx.strokeText(text, coordinate['x'], coordinate['y'])
     },
-    drawBg (ctx) {
+    drawBg (ctx, colorType) {
       ctx.beginPath()
       const ctxBaseColor = ctx.createLinearGradient(0, 410, 0, 1620)
-      ctxBaseColor.addColorStop(0.0, '#FD81A6')
-      ctxBaseColor.addColorStop(1.0, '#FFFF83')
+
+      if (colorType === '桃 ~ 黃') {
+        ctxBaseColor.addColorStop(0.0, '#FD81A6')
+        ctxBaseColor.addColorStop(1.0, '#FFFF83')
+      } else {
+        ctxBaseColor.addColorStop(0.0, '#AEEC97')
+        ctxBaseColor.addColorStop(0.3, '#FFF')
+        ctxBaseColor.addColorStop(1.0, '#73B2F9')
+      }
       ctx.fillStyle = ctxBaseColor
       ctx.fillRect(0, 0, 2880, 1620)
     }
