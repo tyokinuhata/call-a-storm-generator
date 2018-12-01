@@ -5,26 +5,26 @@
     </header>
     <div class="container">
       <div class="mb-2">
-        <div class="row mb-2">
+        <div class="row mb-2 mr-1 ml-1">
           <div class="col-md-1">上の段</div>
           <input class="form-control d-inline col-md-11" v-model="titleTop" autofocus>
         </div>
-        <div class="row mb-2">
+        <div class="row mb-2 mr-1 ml-1">
           <div class="col-md-1">下の段</div>
           <input class="form-control d-inline col-md-11" v-model="titleBottom">
         </div>
 
-        <div class="row mb-2">
+        <div class="row mb-2 mr-1 ml-1">
           <div class="col-md-1">左側</div>
           <input class="form-control d-inline col-md-11" v-model="leftCap">
         </div>
-        <div class="row mb-2">
+        <div class="row mb-2 mr-1 ml-1">
           <div class="col-md-1">右側</div>
           <input class="form-control d-inline col-md-11" v-model="rightCap">
         </div>
       </div>
 
-      <div class="row mb-2">
+      <div class="row mb-2 mr-1 ml-1">
         <button type="button" class="col-md-6 btn btn-success" @click="generate">嵐を呼ぶ！</button>
         <a href ="https://twitter.com/intent/tweet?&hashtags=嵐を呼ぶジェネレータ&url=https://afterschoolstudy.github.io/generator_of_call_a_storm" class="col-md-6 btn btn-primary">嵐をシェアする！</a>
       </div>
