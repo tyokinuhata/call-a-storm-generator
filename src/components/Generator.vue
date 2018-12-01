@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header class="mt-2">
+    <header class="mt-2 mr-1 ml-1">
       <h1>{{ appName }}</h1>
     </header>
     <div class="container">
