@@ -1,12 +1,13 @@
 # 嵐を呼ぶサブタイトルジェネレーター
 
-## セットアップの説明だゾ
+## セットアップとビルドの説明だゾ
 
 ``` bash
 $ npm i
 $ npm run dev
+$ npm run build
 ```
 
 ## ジェネレーターのリンクだゾ
 
-https://afterschoolstudy.github.io/generator_of_call_a_storm/dist/
+https://afterschoolstudy.github.io/generator_of_call_a_storm
