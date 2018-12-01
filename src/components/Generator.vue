@@ -30,7 +30,7 @@
         </div>
       </div>
 
-      <div class="row mb-2 mr-1 ml-1">
+      <div class="row mb-2 mr-1 mr-1 ml-1">
         <button type="button" class="col-md-6 btn btn-success" @click="generate">嵐を呼ぶ！</button>
         <a href ="https://twitter.com/intent/tweet?&hashtags=嵐を呼ぶジェネレーター&url=https://afterschoolstudy.github.io/generator_of_call_a_storm" class="col-md-6 btn btn-primary">嵐をシェアする！</a>
       </div>
