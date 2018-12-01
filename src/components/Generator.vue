@@ -61,7 +61,7 @@ export default {
     generate () {
       // 描画
       let ctx = document.getElementById('output_field').getContext('2d')
-      this.drawBg()
+      this.drawBg(ctx)
       this.drawTitle(ctx)
       this.drawCaption(ctx, this.leftCap, 'left', { 'x': 400, 'y': 1350 })
       this.drawCaption(ctx, this.rightCap, 'right', { 'x': 2480, 'y': 1350 })
@@ -88,14 +88,13 @@ export default {
       ctx.strokeStyle = 'gray'
       ctx.strokeText(text, coordinate['x'], coordinate['y'])
     },
-    drawBg () {
-      const ctxBase = document.getElementById('output_field').getContext('2d')
-      ctxBase.beginPath()
-      const ctxBaseColor = ctxBase.createLinearGradient(0, 410, 0, 1620)
+    drawBg (ctx) {
+      ctx.beginPath()
+      const ctxBaseColor = ctx.createLinearGradient(0, 410, 0, 1620)
       ctxBaseColor.addColorStop(0.0, '#FD81A6')
       ctxBaseColor.addColorStop(1.0, '#FFFF83')
-      ctxBase.fillStyle = ctxBaseColor
-      ctxBase.fillRect(0, 0, 2880, 1620)
+      ctx.fillStyle = ctxBaseColor
+      ctx.fillRect(0, 0, 2880, 1620)
     }
   }
 }
