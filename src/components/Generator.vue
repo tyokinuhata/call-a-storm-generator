@@ -56,11 +56,10 @@ export default {
   data () {
     return {
       appName: '嵐を呼ぶサブタイトルジェネレーター',
-      titleColor: '#5853A0',
       titleTop: '嵐を呼ぶサブタイトル',
       titleBottom: 'ジェネレーターだゾ',
-      leftCap: '脚本 : フロント 太郎',
-      rightCap: '監督 : エンド 次郎',
+      leftCap: '脚本 : ごめんね',
+      rightCap: '監督 : おらもう',
       colorType: '桃 ~ 黃',
       src: '',
       isGenerated: false
